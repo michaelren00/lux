@@ -9,24 +9,26 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
   </head>
 
-  <body class="container-fluid" id="landingpage">
+  <body id="landingpage">
+    <img id="picture_logo" src="lux.png" style="transform: scale(0.3)">
     <div class="d-flex justify-content-center">
       <p id="Logo" class="quicksand" style="font-size:80px;">Lux</p>
     </div>
     <div class="d-flex justify-content-center" id="textbox-container">
-      <input type="text" id="textbox" placeholder="Enter Phone #"/> 
+      <input type="text" class="textbox" id="phoneNumber" placeholder="Enter Phone #"/> 
       <button type="button" id="button" onclick="getInputValue()" style="display:none;">Click me</button>
     </div>
-
-    <div class="animation-zone">
-      <ul class="box-area">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+    <div id="personalize_button" class="d-flex justify-content-center">
+        <p class="quicksand" style="display:inline; padding-right: 8px;"> Personalize?  </p>
+        <label class="switch">
+        <input type="checkbox" id="lightswitch">
+        <span class="slider round"></span>
     </div>
+    <div id="personalize_questions" class="d-flex justify-content-center">
+      <input type="text" class="textbox" id="name" placeholder="Enter Name" style="margin-right: 10px;"/>
+      <input type="text" class="textbox" id="birthday" placeholder="Enter Birthday"/>
+    </div>
+
 
     <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"

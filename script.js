@@ -6,14 +6,12 @@ $(document).ready(function(){
 
 
 function getInputValue() {
-  var phoneNumber = document.getElementById("textbox").value
+  var phoneNumber = document.getElementById("phoneNumber").value
 fetch('http://127.0.0.1:5000/sendMessage', {method:"POST", mode: 'no-cors', headers: {'Content-Type': 'application/json'},body:JSON.stringify({to: phoneNumber})}).then( response => console.log(response));
-  // xhr.send(phoneNumber);
-  alert(phoneNumber)
 }
 
 // Get the input field
-var input = document.getElementById("textbox");
+var input = document.getElementById("phoneNumber");
 
 // Execute a function when the user releases a key on the keyboard
 input.addEventListener("keyup", function(event) {
@@ -26,3 +24,15 @@ input.addEventListener("keyup", function(event) {
   }
 });
 
+var personalize_questions = document.getElementById("personalize_questions")
+
+$(document).ready(function(){
+      $('input[type="checkbox"]').click(function(){
+          if($(this).prop("checked") == true){
+            personalize_questions.style.height = "auto";
+          }
+          else if($(this).prop("checked") == false){
+            personalize_questions.style.height = "0";
+          }
+      });
+  });
